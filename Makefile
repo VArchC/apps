@@ -1,0 +1,13 @@
+
+TOP_TARGETS=all clean
+
+APPS_DIRS=$(wildcard */.)
+
+$(TOP_TARGETS): $(APPS_DIRS)
+
+$(APPS_DIRS):
+		$(MAKE) -C $@ $(MAKECMDGOALS)
+
+.PHONY: $(TOP_TARGETS) $(APPS_DIRS)
+
+
